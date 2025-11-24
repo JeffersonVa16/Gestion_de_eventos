@@ -5,7 +5,9 @@ Proyecto Fase 2
 Integrantes:
 
 Arístides Alexander Hernández Valdez HV241964
+
 Rossman Antonio Cabrera Davila CD240690
+
 Jefferson Steven Velasco Alvarez VA242207
 
 Enlaces:
