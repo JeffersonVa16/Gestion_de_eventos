@@ -2,10 +2,19 @@ package com.gestion.eventos.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+// Colores modernos y minimalistas
+val PrimaryBlue = Color(0xFF6366F1) // Indigo moderno
+val PrimaryBlueDark = Color(0xFF4F46E5)
+val SecondaryBlue = Color(0xFF818CF8)
+val AccentPurple = Color(0xFF8B5CF6)
+val AccentPink = Color(0xFFEC4899)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+// Colores para modo oscuro
+val PrimaryBlue80 = Color(0xFFA5B4FC)
+val PrimaryBlueGrey80 = Color(0xFFC7D2FE)
+val AccentPurple80 = Color(0xFFC4B5FD)
+
+// Colores para modo claro
+val PrimaryBlue40 = Color(0xFF4F46E5)
+val PrimaryBlueGrey40 = Color(0xFF6366F1)
+val AccentPurple40 = Color(0xFF7C3AED)
