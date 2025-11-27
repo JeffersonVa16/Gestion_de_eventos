@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "287714325996",
-    "project_id": "gestion-eventos-51969",
-    "storage_bucket": "gestion-eventos-51969.firebasestorage.app"
+    "project_number": "199128749430",
+    "project_id": "gestion-eventos-ae6c5",
+    "storage_bucket": "gestion-eventos-ae6c5.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:287714325996:android:eee549dd3adf1b4f99fcc9",
+        "mobilesdk_app_id": "1:199128749430:android:04749d6385dbbafb001657",
         "android_client_info": {
           "package_name": "com.gestion.eventos"
         }
       },
       "oauth_client": [
         {
-          "client_id": "287714325996-scufgn441d08dqdkdaskkvuuoppe0l9k.apps.googleusercontent.com",
+          "client_id": "199128749430-4qgdpiprga6knt3e73gh8v512mn3o5ea.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDBjCWTlC-SUfJL5dElHH0NhmI_d3eSMJk"
+          "current_key": "AIzaSyD2A6Lss9u4bXOiVRo5ffoZ1nX8QwYc8_o"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "287714325996-scufgn441d08dqdkdaskkvuuoppe0l9k.apps.googleusercontent.com",
+              "client_id": "199128749430-4qgdpiprga6knt3e73gh8v512mn3o5ea.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -37,4 +37,3 @@
   ],
   "configuration_version": "1"
 }
-

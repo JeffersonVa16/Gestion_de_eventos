@@ -28,6 +28,7 @@ import com.gestion.eventos.ui.screens.ShareHelper
 import com.gestion.eventos.ui.screens.SignUpScreen
 import com.gestion.eventos.ui.viewmodel.AuthViewModel
 import com.gestion.eventos.ui.viewmodel.EventViewModel
+import kotlinx.coroutines.delay
 
 sealed class Screen(val route: String) {
     object Login : Screen("login")
@@ -54,23 +55,28 @@ fun NavGraph(
     val eventState by eventViewModel.uiState.collectAsState()
 
     LaunchedEffect(authState.isAuthenticated) {
-        val currentRoute = navController.currentDestination?.route
         if (authState.isAuthenticated) {
             // Si el usuario se autenticó, navegar a la lista de eventos
+            val currentRoute = navController.currentDestination?.route
             if (currentRoute == Screen.Login.route || currentRoute == Screen.SignUp.route) {
+                // Usar un pequeño delay para asegurar que el estado se haya actualizado completamente
+                kotlinx.coroutines.delay(100)
                 navController.navigate(Screen.EventList.route) {
                     popUpTo(0) { 
                         inclusive = true 
                     }
                 }
             }
-        } else if (!authState.isAuthenticated && 
-                   currentRoute != Screen.Login.route && 
-                   currentRoute != Screen.SignUp.route) {
+        } else {
             // Si el usuario no está autenticado y no está en login/signup, volver a login
-            navController.navigate(Screen.Login.route) {
-                popUpTo(0) { 
-                    inclusive = true 
+            val currentRoute = navController.currentDestination?.route
+            if (currentRoute != null && 
+                currentRoute != Screen.Login.route && 
+                currentRoute != Screen.SignUp.route) {
+                navController.navigate(Screen.Login.route) {
+                    popUpTo(0) { 
+                        inclusive = true 
+                    }
                 }
             }
         }

@@ -69,14 +69,24 @@ class AuthViewModel : ViewModel() {
                 val result = repository.signUpWithEmail(email, password, name)
                 result.fold(
                     onSuccess = { user ->
-                        // Primero actualizar el estado de autenticación
+                        // Crear un usuario básico inmediatamente para que la navegación funcione
+                        val basicUser = User(
+                            id = user.uid,
+                            email = user.email ?: email,
+                            name = name,
+                            photoUrl = user.photoUrl?.toString()
+                        )
+                        // Actualizar el estado de autenticación inmediatamente
                         _uiState.value = _uiState.value.copy(
                             isLoading = false,
                             isAuthenticated = true,
+                            currentUser = basicUser,
                             infoMessage = "¡Registro exitoso!"
                         )
-                        // Luego cargar los datos del usuario en segundo plano
-                        loadUserData()
+                        // Cargar los datos completos del usuario en segundo plano sin bloquear
+                        launch {
+                            loadUserData()
+                        }
                     },
                     onFailure = { e ->
                         _uiState.value = _uiState.value.copy(
